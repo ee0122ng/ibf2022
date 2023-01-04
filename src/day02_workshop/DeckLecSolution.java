@@ -20,8 +20,8 @@ public class DeckLecSolution {
                 deck.add(card);
             }
         }
-        System.out.println("The new deck");
-        System.out.println(deck);       // invoke the toString from CardLecSolution class, since deck is a type of CardLecSolution 
+        // System.out.println("The new deck");
+        // System.out.println(deck);       // invoke the toString from CardLecSolution class, since deck is a type of CardLecSolution 
     }
 
     public void shuffle() {
