@@ -35,11 +35,18 @@ class Shape {
     private String shape;
 
     public Shape() {
-        List<String> shapeList = Arrays.asList("Diamond", "Club", "Heart", "Spade");
+        List<String> shapeList = Arrays.asList("DIAMOND", "CLUB", "HEART", "SPADE");
         Random rand = new Random();
         int randomIndex = rand.nextInt(0, 4);
 
         this.shape = shapeList.get(randomIndex);
+    }
+
+    public Shape(String shape) {
+        
+        if (shape.matches("DIAMOND|CLUB|HEART|SPADE")) {
+            this.shape = shape;
+        }
     }
 
     public String getShape() {
@@ -49,10 +56,10 @@ class Shape {
     public int getRank() {
 
         Map<String, Integer> shapeMap = new HashMap<>();
-        shapeMap.put("Diamond", 1);
-        shapeMap.put("Club", 2);
-        shapeMap.put("Heart", 3);
-        shapeMap.put("Spade", 4);
+        shapeMap.put("DIAMOND", 1);
+        shapeMap.put("CLUB", 2);
+        shapeMap.put("HEART", 3);
+        shapeMap.put("SPADE", 4);
 
         return shapeMap.get(this.shape);
 
@@ -72,6 +79,12 @@ class Symbol {
         int randomNumber = rand.nextInt(0, 13);
 
         this.symbol = symbolList.get(randomNumber);
+    }
+
+    public Symbol(String symbol) {
+        if (symbol.matches("ACE|TWO|THREE|FOUR|FIVE|SIX|SEVEN|EIGHT|NINE|TEN|JACK|QUEEN|KING")) {
+            this.symbol = symbol;
+        }
     }
 
     public String getSymbol() {
@@ -111,6 +124,15 @@ class Symbol {
                 break;
             case "TEN" :
                 value = 10;
+                break;
+            case "JACK" :
+                value = 11;
+                break;
+            case "QUEEN" :
+                value = 12;
+                break;
+            case "KING" :
+                value = 13;
                 break;
             default : 
                 value = 0;
